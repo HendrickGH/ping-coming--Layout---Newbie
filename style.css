@@ -1,0 +1,214 @@
+/*
+# Front-end Style Guide
+
+## Layout
+
+The designs were created to the following widths:
+
+- Mobile: 375px
+- Desktop: 1440px
+
+## Colors
+
+### Primary
+
+- Blue: hsl(223, 87%, 63%)
+
+### Secondary
+
+- Pale Blue: hsl(223, 100%, 88%)
+- Light Red: hsl(354, 100%, 66%)
+
+### Neutral
+
+- Gray: hsl(0, 0%, 59%)
+- Very Dark Blue: hsl(209, 33%, 12%)
+
+## Typography
+
+### Body Copy
+
+- Font size: 20px
+
+### Fonts
+
+- Family: [Libre Franklin](https://fonts.google.com/specimen/Libre+Franklin)
+- Weights: 300, 600, 700
+
+## Icons
+
+For the social icons, you can use a font icon library. Some suggestions can be found below:
+
+- [Font Awesome](https://fontawesome.com)
+- [IcoMoon](https://icomoon.io)
+- [Ionicons](https://ionicons.com)
+*/
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;600;700&display=swap');
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+html {
+	font-size: 62.5%;
+}
+body {
+	font-family: 'Libre Franklin', sans-serif;
+}
+.main {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.container {
+	width: 80rem;
+	display: flex;
+	gap: 6.4rem;
+	flex-direction: column;
+}
+.section-head {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.logo {
+	margin: 3.6rem;
+}
+.box-text {
+	width: 55rem;
+	text-align: center;
+}
+.title {
+	color: #969696;
+	font-weight: 300;
+	font-size: 3.6rem;
+}
+.title span {
+	color: #151f29;
+	font-weight: 700;
+}
+.text {
+	color: #151f29;
+	font-weight: 600;
+	font-size: 1.2rem;
+	margin: 1.2rem 0;
+}
+.contact {
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+	position: relative;
+}
+.email {
+	border-radius: 1000rem;
+	border: 1px solid #969696;
+	padding-left: 1.2rem;
+	color: #969696;
+	font-weight: 300;
+}
+.email::placeholder {
+	color: #969696;
+}
+.email:focus {
+	outline: 1px solid #969696;
+}
+.notify {
+	align-self: center;
+	justify-self: center;
+	padding: 1.2rem 3.2rem;
+	background-color: #4f7df3;
+	border-radius: 1000rem;
+	color: #fff;
+	font-weight: 600;
+	text-decoration: none;
+	font-size: 1.2rem;
+	transition: background-color 0.2s;
+}
+.notify:hover {
+	background-color: #c2d3ff;
+}
+.box-img {
+	display: flex;
+	justify-content: center;
+}
+.how-img {
+	width: 70%;
+	height: 35%;
+}
+.footer {
+	margin-top: 1.2rem;
+}
+.socials {
+	list-style: none;
+	display: flex;
+	justify-content: center;
+	gap: 0.4rem;
+}
+.socials a {
+	display: block;
+}
+.social-logo {
+	color: #4f7df3;
+	padding: 0.8rem;
+	border-radius: 1000rem;
+	border: 1px solid #c2d3ff;
+	height: 1.6rem;
+	width: 1.6rem;
+	transition: all 0.3s;
+}
+.social-logo:hover {
+	background-color: #4f7df3;
+	color: #fff;
+}
+.copy {
+	margin: 1.2rem 0 2.4rem 0;
+	text-align: center;
+	color: #151f29;
+	font-weight: 300;
+}
+.absolute {
+	display: none;
+}
+.trash .absolute {
+	display: block;
+	position: absolute;
+	bottom: 0;
+	margin-left: 1.2rem;
+	transform: translateY(200%);
+	color: #ff5263;
+	font-weight: 600;
+}
+.trash .email {
+	border: 1px solid #ff5263;
+}
+.trash .email:focus {
+	outline: 1px solid #ff5263;
+}
+@media (max-width: 41em) {
+	.main {
+		flex-direction: row;
+		/* justify-content: flex-start; */
+	}
+	.container {
+		height: 80vh;
+	}
+	.contact {
+		grid-template-columns: 1fr;
+		grid-template-rows: 1fr 1fr;
+		gap: 3.6rem;
+		margin: 0 7.6rem;
+	}
+	.notify {
+		align-self: auto;
+		justify-self: auto;
+	}
+	.trash .absolute {
+		bottom: 50%;
+		transform: translateY(50%);
+	}
+	.footer {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translateY(400%);
+	}
+}

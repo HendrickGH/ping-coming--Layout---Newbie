@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- displays site properly based on user's device -->
+
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="./images/favicon-32x32.png"
+		/>
+		<link rel="stylesheet" href="style.css" />
+		<script
+			type="module"
+			src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.esm.js"
+		></script>
+		<script
+			nomodule=""
+			src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.js"
+		></script>
+		<title>Frontend Mentor | Ping coming soon page</title>
+	</head>
+	<body>
+		<main class="main">
+			<div class="container">
+				<section class="section section-head">
+					<figure class="logo">
+						<img src="images/logo.svg" alt="Ping Inc" class="img-logo" />
+					</figure>
+					<div class="box-text">
+						<h1 class="title">We are launching <span>soon!</span></h1>
+						<p class="text">Subscribe and get notified</p>
+						<div class="contact">
+							<input
+								type="email"
+								placeholder="Your email adress..."
+								class="email"
+							/>
+							<a href="#" class="notify"> Notify Me</a>
+							<em class="absolute">Please provide a valid email adress</em>
+						</div>
+					</div>
+				</section>
+				<section class="section">
+					<figure class="box-img">
+						<img
+							src="images/illustration-dashboard.png"
+							alt="How it works!"
+							class="how-img"
+						/>
+					</figure>
+				</section>
+			</div>
+		</main>
+		<footer class="footer">
+			<ul class="socials">
+				<li class="social">
+					<a href="#"
+						><ion-icon name="logo-facebook" class="social-logo"></ion-icon
+					></a>
+				</li>
+				<li class="social">
+					<a href="#"
+						><ion-icon name="logo-twitter" class="social-logo"></ion-icon
+					></a>
+				</li>
+				<li class="social">
+					<a href="#"
+						><ion-icon name="logo-instagram" class="social-logo"></ion-icon
+					></a>
+				</li>
+			</ul>
+			<p class="copy">&copy; Copyright Ping. All rights reserved.</p>
+		</footer>
+		<script>
+			const btn = document.querySelector('.notify');
+			const input = document.querySelector('.email');
+			const regex =
+				/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+			const btnParent = btn.parentElement.parentElement.classList;
+			const validateEmail = () =>
+				!regex.test(input.value)
+					? btnParent.add('trash')
+					: btnParent.remove('trash');
+			btn.addEventListener('click', validateEmail);
+		</script>
+	</body>
+</html>
